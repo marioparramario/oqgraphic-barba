@@ -21,41 +21,35 @@ const handleStrip = open => {
 
 const Home = Barba.BaseView.extend({
   namespace: 'home',
-  onEnter: function () {
-    console.log('home on enter')
-  },
-  onEnterCompleted: function () {
-    console.log('home completed');
-  },
-  onLeave: function () {
-    console.log('home leaving');
-  },
+  onEnter: function () {},
+  onEnterCompleted: function () {},
+  onLeave: function () {},
   onLeaveCompleted: function () {}
 });
 const Illustration = Barba.BaseView.extend({
   namespace: 'illustration',
-  onEnter: function () {
-    console.log('illustration on enter')
-  },
-  onEnterCompleted: function () {
-    console.log('entering illustration');
-  },
-  onLeave: function () {
-    console.log('leaving illustration');
-  },
+  onEnter: function () {},
+  onEnterCompleted: function () {},
+  onLeave: function () {},
   onLeaveCompleted: function () {}
+});
+
+const transitionHandler = () => new Promise((resolve, reject) => {
+  //waits global.stripAnimationDuration ms for wait that the animation triggering
+  //on start transition has been finished
+  setTimeout(() => {
+    handleStrip(true);
+    resolve();
+  }, globals.stripAnimationDuration + 50);
 });
 const HideShowTransition = Barba.BaseTransition.extend({
   start: function() {
-    console.log("start page change");
     handleStrip(false);
-    this.newContainerLoading.then(this.finish.bind(this));
+    this.newContainerLoading
+      .then(transitionHandler)
+      .then(this.finish.bind(this));
   },
   finish: function() {
-    //waits global.stripAnimationDuration ms for wait that the animation triggering
-    //on start transition has been finished
-    setTimeout(handleStrip, globals.stripAnimationDuration, true);
-    console.log("finish page change");
     this.done();
   }
 });
