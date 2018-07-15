@@ -19,16 +19,29 @@ module.exports = {
             { test: /\.js$/, exclude: /node_modules/,loader: 'babel-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+            {
+                test: /\.(html)$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: 'html-loader',
+                  options: {
+                    attrs:[':data-src'],
+                    minimize: false,
+                    conservativeCollapse: false,
+                    interpolate: true
+                  }
+                }
+            },
         ]
     },
-    plugins: [        
+    plugins: [
         new HtmlWebpackPlugin({
             template: 'illustration/index.html',
             author: author.name,
             title: config.title,
             version: `v${version}`,
             inject: false
-        }),
+        }),   
         new HtmlWebpackPlugin({
             template: 'graphic/index.html',
             author: author.name,
