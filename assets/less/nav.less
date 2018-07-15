@@ -1,0 +1,51 @@
+@import "variables.less";
+
+.navbar {
+  position: absolute;
+  height: 6rem;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  .nav-wrapper {
+    padding: 0 2.5rem;
+    width: 100%;
+    .logo {
+      width: 200px;
+      svg {
+        width: 100%;
+        path, polygon {
+          fill: @black;
+        }
+      }
+    }
+    .link-container {
+      .nav-link {
+        font-family: @circular;
+        margin-left: 4rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .nav-menu {
+    height: 30px;
+    width: 30px;
+    background: red;
+    position: relative;
+    cursor: pointer;
+    span {
+      top: 5px;
+      width: 100%;
+      height: 2px;
+      background: black;
+      position: absolute;
+      &:nth-of-type(2) {
+        top: calc(50% - 2px;);
+      }
+      &:nth-of-type(3) {
+        top: auto;
+        bottom: 5px;
+      }
+    }
+  }
+}
