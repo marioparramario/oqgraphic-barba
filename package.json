@@ -30,7 +30,8 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "barba.js": "^1.0.0",
-    "html-loader": "^0.5.5"
+    "html-loader": "^0.5.5",
+    "less-font-face": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
