@@ -1,0 +1,7 @@
+.vscode
+node_modules
+test/e2e/videos
+test/e2e/screenshots
+dist/
+
+npm-debug.log

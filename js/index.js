@@ -1,3 +1,9 @@
+import anime from 'animejs';
+import Barba from 'barba.js';
+
+import Home from './Home';
+import Illustration from './Illustration';
+
 const globals = {
   stripAnimationDuration: 600
 };
@@ -18,22 +24,6 @@ const handleStrip = open => {
     easing: 'easeInOutQuad'
   });
 };
-
-const Home = Barba.BaseView.extend({
-  namespace: 'home',
-  onEnter: function () {},
-  onEnterCompleted: function () {},
-  onLeave: function () {},
-  onLeaveCompleted: function () {}
-});
-const Illustration = Barba.BaseView.extend({
-  namespace: 'illustration',
-  onEnter: function () {},
-  onEnterCompleted: function () {},
-  onLeave: function () {},
-  onLeaveCompleted: function () {}
-});
-
 const transitionHandler = () => new Promise((resolve, reject) => {
   //waits global.stripAnimationDuration ms for wait that the animation triggering
   //on start transition has been finished
