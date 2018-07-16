@@ -1,4 +1,6 @@
+import salvattore from 'salvattore';
 import Barba from 'barba.js';
+
 
 const Illustration = Barba.BaseView.extend({
     namespace: 'illustration',

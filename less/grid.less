@@ -6,13 +6,6 @@
   width: 95%;
   max-width: 1280px;
 }
-
-// #grid {
-// 	&[data-columns]::before {
-// 		content: '3 .column.size-1of3';
-// 	}
-// }
-
 .stack {
   position: relative;
 }
@@ -20,20 +13,16 @@
   position: absolute;
   bottom: 0;
 }
-
-
 .grid {
   width: 100%;
   &-item {
     position: relative;
     overflow: hidden;
     &-container {
-      // opacity: 0;
   		padding-bottom: 16px;
   	}
-    &-image {
-
-    }
+    // &-image {
+    // }
     &-caption {
   		position: absolute;
       bottom: 10px;
@@ -41,8 +30,6 @@
       opacity: 0;
       font-size: 1.5rem;
       font-family: @circular-medium;
-      // transform: translateX(-30px);
-      // opacity: 0;
   	}
   }
 
@@ -72,26 +59,17 @@
 		width: 25%;
 	}
 }
-// .anime {
-// 	opacity: 0;
+// [data-namespace="illustration"] {
+//   img {
+//     width: 100%;
+//   	height: 100%;
+//   }
 // }
-
-[data-namespace="illustration"] {
-  img {
-    width: 100%;
-  	height: 100%;
-  }
-}
-
-
-
-
 @media screen and (max-width: @phone){
 	#grid[data-columns]::before {
 		content: '1 .column.size-1of1';
 	}
 }
-
 @media screen and (min-width: @phone + 1px) and (max-width: @small-tablet) {
 	#grid[data-columns]::before {
 		content: '2 .column.size-1of2';
@@ -102,7 +80,6 @@
 		content: '3 .column.size-1of3';
 	}
 }
-
 @media (max-width: @tablet) {
   .grid-item-caption {
     font-size: 1.2rem;
