@@ -12,7 +12,8 @@
     "start": "webpack-dev-server --hot --mode development",
     "dev": "npm start -- --watch",
     "build": "webpack --mode production",
-    "release": "standard-version"
+    "release": "standard-version",
+    "reinstall": "rm -rf node_modules package-lock.json && npm install"
   },
   "config": {
     "title": "OQ Graphic"
@@ -42,6 +43,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "v4.0.0-alpha.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "less": "^3.7.1",

@@ -5,7 +5,7 @@ import Home from './Home';
 import Illustration from './Illustration';
 
 const globals = {
-  stripAnimationDuration: 2000
+  stripAnimationDuration: 400
 };
 
 const handleStrip = open => {

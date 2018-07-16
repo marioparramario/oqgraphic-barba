@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const { author, config , version } = require('./package.json');
 
@@ -17,7 +18,13 @@ module.exports = {
         rules: [
             { test: /\.js$/, exclude: /node_modules/,loader: 'babel-loader' },
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-            { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+            { 
+                test: /\.less$/, 
+                use: ExtractTextPlugin.extract({ 
+                    fallback: 'style-loader', 
+                    use:[ "css-loader", "less-loader" ] 
+                }) 
+            },
             {
                 test: /\.(html)$/,
                 exclude: /node_modules/,
@@ -77,6 +84,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from:'assets/', to:'assets/' }
         ]),
+        new ExtractTextPlugin('style.css', { allChunks: true })
     ],
     devtool: 'eval-source-map',
     devServer: {
