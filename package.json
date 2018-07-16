@@ -31,6 +31,8 @@
     "animejs": "^2.2.0",
     "barba.js": "^1.0.0",
     "html-loader": "^0.5.5",
+    "jquery": "^3.3.1",
+    "jquery-parallax.js": "^1.5.0",
     "less-font-face": "^1.0.1"
   },
   "devDependencies": {
