@@ -1,4 +1,5 @@
 import Barba from 'barba.js';
+import Parallax from 'parallax-js';
 
 const Home = Barba.BaseView.extend({
     namespace: 'home',
