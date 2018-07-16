@@ -5,21 +5,19 @@ import Home from './Home';
 import Illustration from './Illustration';
 
 const globals = {
-  stripAnimationDuration: 600
+  stripAnimationDuration: 2000
 };
 
 const handleStrip = open => {
   anime({
     targets: '.stripe-top',
     translateY: open ? '-100%' : '0',
-    // offset: 200,
     duration: globals.stripAnimationDuration,
     easing: 'easeInOutQuad'
   });
   anime({
     targets: '.stripe-bottom',
     translateY: open ? '100%' :'0',
-    // offset: 200,
     duration: globals.stripAnimationDuration,
     easing: 'easeInOutQuad'
   });
