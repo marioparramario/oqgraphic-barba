@@ -1,28 +1,21 @@
 @import "variables.less";
 
+
 .main {
   margin-top: 10rem;
   padding: 0 2em;
   width: 95%;
   max-width: 1280px;
 }
-.stack {
-  position: relative;
-}
-.stack__caption {
-  position: absolute;
-  bottom: 0;
-}
 .grid {
   width: 100%;
+  height: 100%;
   &-item {
     position: relative;
     overflow: hidden;
     &-container {
-  		padding-bottom: 16px;
+  		margin-bottom: 16px;
   	}
-    // &-image {
-    // }
     &-caption {
   		position: absolute;
       bottom: 10px;
@@ -32,56 +25,36 @@
       font-family: @circular-medium;
   	}
   }
-
 }
 
-.column {
-	float: left;
-	padding: 0 8px;
-	&:first-child {
-		padding-left: 0
-	}
-	&:last-child {
-		padding-right: 0;
-	}
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
-.size-1 {
-	&of1 {
-		width: 100%;
-	}
-	&of2 {
+.grid-sizer,
+.grid-item-container {
+  width: 100% / 3;
+}
+
+// .gutter-sizer {
+//   width: 16px;
+// }
+
+.grid-item-container img {
+  display: block;
+  max-width: 100%;
+}
+
+
+@media (max-width: 767px){
+	.grid-sizer, .grid-item-container {
 		width: 100% / 2;
 	}
-	&of3 {
-		width: 100% / 3;
-	}
-	&of4 {
-		width: 25%;
-	}
 }
-// [data-namespace="illustration"] {
-//   img {
-//     width: 100%;
-//   	height: 100%;
-//   }
-// }
-@media screen and (max-width: @phone){
-	#grid[data-columns]::before {
-		content: '1 .column.size-1of1';
+@media (max-width: 479px){
+	.grid-sizer, .grid-item-container {
+		width: 100%;
 	}
-}
-@media screen and (min-width: @phone + 1px) and (max-width: @small-tablet) {
-	#grid[data-columns]::before {
-		content: '2 .column.size-1of2';
-	}
-}
-@media screen and (min-width: @small-tablet + 1px) {
-	#grid[data-columns]::before {
-		content: '3 .column.size-1of3';
-	}
-}
-@media (max-width: @tablet) {
-  .grid-item-caption {
-    font-size: 1.2rem;
-  }
 }

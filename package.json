@@ -33,6 +33,7 @@
     "barba.js": "^1.0.0",
     "html-loader": "^0.5.5",
     "less-font-face": "^1.0.1",
+    "masonry-layout": "^4.2.2",
     "parallax-js": "^3.1.0",
     "salvattore": "^1.0.9"
   },

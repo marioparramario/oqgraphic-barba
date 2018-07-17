@@ -1,6 +1,6 @@
 import anime from 'animejs';
 import Barba from 'barba.js';
-import salvattore from 'salvattore';
+import Masonry from 'masonry-layout';
 
 import Home from './Home';
 import Illustration from './Illustration';
